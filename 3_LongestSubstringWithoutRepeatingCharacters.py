@@ -90,14 +90,29 @@ class Solution:
             if newLength > self.maxLength:
                 self.maxLength = newLength  
                 
-                
-
-        
-        
-
 
 # ----------------------------------
 # Instruction
 # ----------------------------------
 
+class Solution:
+
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        maxLength, startPoint, cacheList = 0, 0, [False for i in range(256)]
+        for i, item in enumerate(s):
+            location = ord(item)
+            if not cacheList[location]:
+                cacheList[location] = True
+            else:
+                while item != s[startPoint]:
+                    cacheList[ord(s[startPoint])] = False
+                    startPoint += 1
+                startPoint += 1
+            maxLength = max(maxLength, i - startPoint + 1)
+            
+        return maxLength
 
