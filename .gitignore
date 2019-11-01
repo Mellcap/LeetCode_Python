@@ -102,3 +102,9 @@ ENV/
 
 # PyCharm
 .idea/*
+
+# Vscode
+.vscode/*
+
+# Temp Solution
+solution_test.py
