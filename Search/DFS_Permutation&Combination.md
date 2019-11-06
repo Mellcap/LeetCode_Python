@@ -34,6 +34,10 @@ def permutation(items, depth, used, curr, ans):
 # [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
 ```
 
+If there are duplicate items in permutation, like [47. Permutations II](47.&#32;Permutations&#32;II.md),
+
+Adding this line: `if (i > 0 and nums[i] == nums[i - 1] and not used[i - 1]) continue;`.
+
 ### Combination
 
 ```python
@@ -53,4 +57,11 @@ def combination(items, depth, start_index, curr, ans):
 # [[1, 2, 3], [1, 2, 4], [1, 2, 5], [1, 3, 4], [1, 3, 5], [1, 4, 5], [2, 3, 4], [2, 3, 5], [2, 4, 5], [3, 4, 5]]
 ```
 
+If there are duplicate items in combination, like [40. Combination Sum II](40.&#32;Combination&#32;Sum&#32;II.md),
+
+Adding line: `if (i > start_index and item == candidates[i - 1]): continue`.
+
+There is a pic which can help you understand:
+
+![](../assets/40.combination_sum_2.png)
 
